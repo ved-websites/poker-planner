@@ -1,0 +1,59 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Launch Edge",
+			"request": "launch",
+			"type": "msedge",
+			"url": "http://localhost:5173",
+			"webRoot": "${workspaceFolder}/src",
+			"timeout": 30000,
+			"cleanUp": "onlyTab",
+			"includeDefaultArgs": true,
+			"pauseForSourceMap": true,
+			"sourceMaps": true,
+			"resolveSourceMapLocations": [
+				"${workspaceFolder}/**",
+				"!**/node_modules/**"
+			],
+			"skipFiles": [
+				"<node_internals>/**",
+				"**/node_modules/**",
+				"**/.svelte-kit/**",
+				"**/@vite/**",
+			],
+			"presentation": {
+				"hidden": false,
+				"group": "Client",
+				"order": 1,
+			},
+			"preLaunchTask": "client dev",
+		},
+		{
+			"name": "Debug Server Side",
+			"type": "node",
+			"request": "launch",
+			"runtimeExecutable": "pnpm",
+			"runtimeArgs": [
+				"run",
+				"debug"
+			],
+			"skipFiles": [
+				"<node_internals>/**",
+				"**/node_modules/**",
+				"**/.svelte-kit/**",
+				"**/@vite/**",
+			],
+			"preLaunchTask": "Terminate Client Dev Server",
+			"postDebugTask": "client dev",
+			"presentation": {
+				"hidden": false,
+				"group": "Client",
+				"order": 2,
+			},
+		},
+	]
+}

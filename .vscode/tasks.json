@@ -1,0 +1,56 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "client dev",
+			"type": "shell",
+			"command": "./.vscode/scripts/debug-client.sh",
+			"isBackground": true,
+			"windows": {
+				"command": "pnpm dev"
+			},
+			"runOptions": {
+				"runOn": "folderOpen"
+			},
+			"icon": {
+				"id": "zap"
+			},
+			"problemMatcher": {
+				"pattern": {
+					"regexp": ""
+				},
+				"background": {
+					"beginsPattern": ".*vite dev.*",
+					"endsPattern": ".*(?:ready in|server restarted|hmr update).*",
+				}
+			},
+			"presentation": {
+				"echo": true,
+				"reveal": "never",
+				"panel": "shared",
+				"group": "dev",
+				"showReuseMessage": false,
+				"clear": false,
+				// "close": true,
+			}
+		},
+		{
+			"label": "Terminate Client Dev Server",
+			"command": "echo ${input:terminate-client}",
+			"type": "shell",
+			"problemMatcher": [],
+			"presentation": {
+				"reveal": "never",
+				"close": true
+			}
+		}
+	],
+	"inputs": [
+		{
+			"id": "terminate-client",
+			"type": "command",
+			"command": "workbench.action.tasks.terminate",
+			"args": "client dev"
+		}
+	]
+}
