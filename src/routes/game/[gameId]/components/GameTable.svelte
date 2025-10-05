@@ -3,9 +3,10 @@
 
 	type Props = {
 		game: GameState;
+		onRevealCards: () => Awaitable<void>;
 	};
 
-	let { game }: Props = $props();
+	let { game, onRevealCards }: Props = $props();
 
 	let players = $derived(game.players);
 
@@ -50,6 +51,9 @@
 </script>
 
 <div class="pill-table">
+	<button class="reveal-cards-btn" onclick={onRevealCards}
+		>Reveal cards</button
+	>
 	{#each players as player, i}
 		<span
 			class="player-pill"
@@ -86,6 +90,26 @@
 		border-radius: 90px;
 		margin: 10rem auto;
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+	}
+
+	.reveal-cards-btn {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 2;
+		padding: 0.7em 1.5em;
+		background: #6366f1;
+		color: #fff;
+		border: none;
+		border-radius: 999px;
+		font-weight: 600;
+		box-shadow: 0 2px 8px rgba(99, 102, 241, 0.15);
+		cursor: pointer;
+		transition: background 0.2s;
+	}
+	.reveal-cards-btn:hover {
+		background: #4338ca;
 	}
 
 	.player-pill {
