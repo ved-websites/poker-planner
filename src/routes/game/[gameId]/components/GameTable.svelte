@@ -9,18 +9,22 @@
 
 	let { players, onRevealCards }: Props = $props();
 
+	// const initialPlayers = players;
+
 	// let addedPlayerCount = $state(0);
 
-	// let players = $derived([
-	// 	...game.players,
-	// 	...Array(addedPlayerCount)
-	// 		.fill(null)
-	// 		.map<(typeof game.players)[number]>((_, i) => ({
-	// 			id: crypto.randomUUID(),
-	// 			name: `Name ${i}`,
-	// 			voted: false,
-	// 		})),
-	// ]);
+	// $effect(() => {
+	// 	players = [
+	// 		...initialPlayers,
+	// 		...Array(addedPlayerCount)
+	// 			.fill(null)
+	// 			.map<(typeof initialPlayers)[number]>((_, i) => ({
+	// 				id: crypto.randomUUID(),
+	// 				name: `Name ${i}`,
+	// 				voted: false,
+	// 			})),
+	// 	];
+	// });
 
 	// setInterval(() => {
 	// 	if (addedPlayerCount >= 15) {
