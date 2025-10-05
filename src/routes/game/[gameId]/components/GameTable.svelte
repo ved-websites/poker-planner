@@ -56,7 +56,7 @@
 	</Button>
 	{#each players as player, i}
 		<span
-			class="player-pill"
+			class="player"
 			style="left: {calculateLeftPosition(
 				i,
 				players.length
@@ -94,20 +94,15 @@
 		justify-content: center;
 	}
 
-	.player-pill {
+	.player {
 		position: absolute;
 		padding: 0.5em 1.2em;
-		/* background: #fff; */
-		/* color: black; */
-		/* border-radius: 999px; */
-		/* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07); */
 		font-weight: 500;
 		white-space: nowrap;
 		transition: transform 0.2s;
 	}
-	.player-pill:hover {
+	.player:hover {
 		transform: scale(1.07);
-		/* background: #e0e7ff; */
 	}
 
 	.player-card {
