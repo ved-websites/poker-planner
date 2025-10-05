@@ -2,20 +2,14 @@
 	import { Button } from "$lib/components/ui/button";
 	import * as Form from "$lib/components/ui/form/index.js";
 	import { Input } from "$lib/components/ui/input";
-	import { getUserId } from "$lib/components/user-id/data.svelte";
 	import { zod4Client } from "sveltekit-superforms/adapters";
 	import { superForm } from "sveltekit-superforms/client";
 	import { newGameSchema } from "./schema";
 
 	let { data } = $props();
 
-	let userId = getUserId();
-
 	const form = superForm(data.form, {
 		validators: zod4Client(newGameSchema),
-		onSubmit: ({ formData }) => {
-			formData.set("hostId", userId.current);
-		},
 	});
 
 	const { form: formData, enhance } = form;

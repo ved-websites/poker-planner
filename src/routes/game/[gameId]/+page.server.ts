@@ -1,15 +1,31 @@
+import { USER_ID_COOKIE_NAME } from "$lib/cookies";
 import { fail } from "@sveltejs/kit";
 import { games } from "../../../state";
 import type { PageServerLoad } from "./$types";
 
-export const load = (async ({ params }) => {
+export const load = (async ({ params, cookies }) => {
 	const game = games.get(params.gameId);
 
 	if (!game) {
 		throw fail(404, { message: "Game not found" });
 	}
 
+	const userId = cookies.get(USER_ID_COOKIE_NAME);
+
+	const isUserInGame = game.data.players.some((p) => p.id === userId);
+	console.log(
+		JSON.stringify(
+			{
+				players: game.data.players,
+				userId,
+			},
+			null,
+			2
+		)
+	);
+
 	return {
-		game,
+		game: game.data,
+		isUserInGame,
 	};
 }) satisfies PageServerLoad;

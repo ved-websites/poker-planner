@@ -1,3 +1,5 @@
+import type { Connection } from "sveltekit-sse";
+
 export interface Player {
 	id: string;
 	name: string;
@@ -5,10 +7,15 @@ export interface Player {
 	voted: boolean;
 }
 
-export interface GameState {
+export interface GameData {
 	id: string;
 	name: string;
 	votingSystem: string[];
 	players: Player[];
 	createdAt: number;
+}
+
+export interface GameState {
+	connections: Map<string, Connection>;
+	data: GameData;
 }

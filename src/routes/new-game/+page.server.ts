@@ -1,4 +1,5 @@
-import type { GameState } from "$lib";
+import type { GameData, GameState } from "$lib";
+import { USER_ID_COOKIE_NAME } from "$lib/cookies";
 import { fail, redirect } from "@sveltejs/kit";
 import { superValidate } from "sveltekit-superforms";
 import { zod4 } from "sveltekit-superforms/adapters";
@@ -13,11 +14,17 @@ export const load = (async () => {
 }) satisfies PageServerLoad;
 
 export const actions = {
-	default: async ({ request }) => {
+	default: async ({ request, cookies }) => {
 		const form = await superValidate(request, zod4(newGameSchema));
 
 		if (!form.valid) {
-			return fail(400, { form });
+			throw fail(400, { form });
+		}
+
+		const userId = cookies.get(USER_ID_COOKIE_NAME);
+
+		if (!userId) {
+			throw fail(400, { form });
 		}
 
 		const randomId = crypto.randomUUID();
@@ -27,16 +34,19 @@ export const actions = {
 			name: form.data.gameName || randomId,
 			players: [
 				{
-					id: form.data.hostId,
+					id: userId,
 					name: form.data.hostName,
 					voted: false,
 				},
 			],
 			votingSystem: form.data.votingSystem.split(","),
 			createdAt: Date.now(),
-		} satisfies GameState;
+		} satisfies GameData;
 
-		games.set(randomId, game);
+		games.set(randomId, {
+			connections: new Map(),
+			data: game,
+		} satisfies GameState);
 
 		return redirect(303, `/game/${randomId}`);
 	},
