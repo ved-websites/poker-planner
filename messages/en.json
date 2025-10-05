@@ -1,4 +1,11 @@
 {
-	"$schema": "https://inlang.com/schema/inlang-message-format",
-	"hello_world": "Hello, {name} from en!"
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+  "hello_world": "Hello, {name} from en!",
+  "toggle_theme": "Toggle theme",
+  "locale_name": "English",
+  "navbar_menu_home": "Home",
+  "navbar_menu_about": "About",
+  "locale_label": "Language",
+  "about_main_text": "This website was created to fulfill the need for a free planning poker tool in an online ecosystem where most options are paid.",
+  "start_new_game": "Start new game"
 }

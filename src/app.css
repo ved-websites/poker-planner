@@ -118,4 +118,36 @@
   body {
     @apply bg-background text-foreground;
   }
+  
+  a.link {
+    @apply hover:underline;
+    @apply text-blue-400;
+    @apply active:text-blue-500;
+    @apply disabled:text-blue-200;
+  }
+  
+  html {
+    overflow-x: hidden;
+    margin-right: calc(-1 * (100vw - 100%));
+  }
+
+  html,
+  body {
+    scroll-behavior: smooth;
+    height: 100%;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  button {
+    &:hover {
+      @apply cursor-pointer;
+    }
+    &:disabled {
+      @apply cursor-not-allowed;
+    }
+  }
 }

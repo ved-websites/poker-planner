@@ -1,0 +1,59 @@
+{
+	"folders": [
+		{
+			"path": "/home/ved/projects/apps/poker-planner"
+		}
+	],
+	"settings": {
+		"[json]": {
+			"editor.defaultFormatter": "vscode.json-language-features",
+			"editor.codeActionsOnSave": {
+				"source.fixAll": "explicit"
+			}
+		},
+		"[yaml]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode",
+			"editor.formatOnSave": true
+		},
+		"[typescript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode",
+			"editor.formatOnSave": true,
+			"editor.codeActionsOnSave": {
+				"source.organizeImports": "explicit",
+				"source.fixAll.eslint": "explicit"
+			}
+		},
+		"[javascript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode",
+			"editor.formatOnSave": true,
+			"editor.codeActionsOnSave": {
+				"source.fixAll.eslint": "explicit"
+			}
+		},
+		"[svelte]": {
+			"editor.defaultFormatter": "svelte.svelte-vscode",
+			"editor.formatOnSave": true,
+			"editor.codeActionsOnSave": {
+				"source.organizeImports": "explicit"
+			}
+		},
+		"[css]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode",
+			"editor.formatOnSave": true
+		},
+		"[scss]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode",
+			"editor.formatOnSave": true
+		},
+		"css.validate": false,
+		"less.validate": false,
+		"scss.validate": false,
+		"i18n-ally.localesPaths": ["messages"],
+		"sherlock.extract": {
+			"autoHumanId": {
+				"enabled": false
+			}
+        },
+        "i18n-ally.keystyle": "flat"
+	}
+}
