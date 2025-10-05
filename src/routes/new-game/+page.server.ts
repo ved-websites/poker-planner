@@ -29,6 +29,7 @@ export const actions = {
 				{
 					id: form.data.hostId,
 					name: form.data.hostName,
+					voted: false,
 				},
 			],
 			votingSystem: form.data.votingSystem.split(","),

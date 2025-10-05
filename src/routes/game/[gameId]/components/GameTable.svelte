@@ -1,15 +1,11 @@
 <script lang="ts">
 	import type { GameState } from "$lib";
-	import { getUserId } from "$lib/components/user-id/data.svelte";
 
 	type Props = {
 		game: GameState;
-		clientVote: string | null;
 	};
 
-	let { game, clientVote }: Props = $props();
-
-	let userId = getUserId();
+	let { game }: Props = $props();
 
 	let players = $derived(game.players);
 
@@ -65,18 +61,12 @@
 			<div
 				class={{
 					"player-card flex items-center justify-center": true,
-					"bg-gray-500!":
-						player.id !== userId.current &&
-						player.vote === undefined,
+					"bg-gray-500!": player.vote === undefined,
 				}}
 			>
 				<span>
-					{#if player.id === userId.current}
-						{#if clientVote === null}
-							...
-						{:else}
-							{clientVote}
-						{/if}
+					{#if player.voted && player.vote === undefined}
+						✅
 					{:else}
 						{player.vote}
 					{/if}
