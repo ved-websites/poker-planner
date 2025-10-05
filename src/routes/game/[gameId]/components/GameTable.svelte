@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Player } from "$lib";
+	import { Button } from "$lib/components/ui/button";
 
 	type Props = {
 		players: Player[];
@@ -45,12 +46,14 @@
 		const y = cy + r * Math.sin(angle) - 20;
 		return `${y}px`;
 	}
+
+	let atLeastOnePlayerVoted = players.some((player) => player.voted);
 </script>
 
-<div class="circle-table">
-	<button class="reveal-cards-btn" onclick={onRevealCards}>
+<div class="circle-table bg-gray-400">
+	<Button onclick={onRevealCards} disabled={!atLeastOnePlayerVoted}>
 		Reveal cards
-	</button>
+	</Button>
 	{#each players as player, i}
 		<span
 			class="player-pill"
@@ -83,34 +86,12 @@
 		position: relative;
 		width: 250px;
 		height: 250px;
-		background: #f3f3f3;
 		border-radius: 50%;
 		margin: 10rem auto;
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 		display: flex;
 		align-items: center;
 		justify-content: center;
-	}
-
-	.reveal-cards-btn {
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		transform: translate(-50%, -50%);
-		z-index: 2;
-		padding: 0.7em 1.5em;
-		background: #6366f1;
-		color: #fff;
-		border: none;
-		border-radius: 999px;
-		font-weight: 600;
-		box-shadow: 0 2px 8px rgba(99, 102, 241, 0.15);
-		cursor: pointer;
-		transition: background 0.2s;
-		white-space: nowrap;
-	}
-	.reveal-cards-btn:hover {
-		background: #4338ca;
 	}
 
 	.player-pill {

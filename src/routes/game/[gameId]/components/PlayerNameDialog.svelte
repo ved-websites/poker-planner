@@ -15,35 +15,6 @@
 	let name = $state<string>();
 </script>
 
-<!-- <Dialog.Root open>
-	<Dialog.Content class="sm:max-w-[425px]" showCloseButton={false}>
-		<Dialog.Header>
-			<Dialog.Title>Enter your name</Dialog.Title>
-			<Dialog.Description>
-				This name will show under your card.
-			</Dialog.Description>
-		</Dialog.Header>
-		<div class="grid gap-4 py-4">
-			<div class="grid grid-cols-4 items-center gap-4">
-				<Label for="name" class="text-right">Name</Label>
-				<Input
-					id="name"
-					bind:value={name}
-					class="col-span-3"
-					autocomplete="off"
-				/>
-			</div>
-		</div>
-		<Dialog.Footer>
-			<Button
-				type="submit"
-				disabled={!name || isLoading}
-				onclick={() => onSubmit(name!)}>Submit</Button
-			>
-		</Dialog.Footer>
-	</Dialog.Content>
-</Dialog.Root> -->
-
 <AlertDialog.Root open>
 	<AlertDialog.Content>
 		<AlertDialog.Header>
