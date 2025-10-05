@@ -27,18 +27,30 @@
 			<Form.Control>
 				{#snippet children({ props })}
 					<Form.Label>Your name</Form.Label>
-					<Input {...props} bind:value={$formData.hostName} />
+					<Input
+						{...props}
+						bind:value={$formData.hostName}
+						autocomplete="off"
+					/>
 				{/snippet}
 			</Form.Control>
+			<Form.Description />
+			<Form.FieldErrors />
 		</Form.Field>
 
 		<Form.Field {form} name="gameName">
 			<Form.Control>
 				{#snippet children({ props })}
 					<Form.Label>Game Name (optional)</Form.Label>
-					<Input {...props} bind:value={$formData.gameName} />
+					<Input
+						{...props}
+						bind:value={$formData.gameName}
+						autocomplete="off"
+					/>
 				{/snippet}
 			</Form.Control>
+			<Form.Description />
+			<Form.FieldErrors />
 		</Form.Field>
 
 		<Form.Field {form} name="votingSystem">
@@ -48,6 +60,8 @@
 					<Input {...props} bind:value={$formData.votingSystem} />
 				{/snippet}
 			</Form.Control>
+			<Form.Description />
+			<Form.FieldErrors />
 		</Form.Field>
 
 		<Button type="submit">Submit</Button>
