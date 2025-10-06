@@ -4,7 +4,6 @@ export interface Player {
 	id: string;
 	name: string;
 	vote?: string;
-	voted: boolean;
 }
 
 export interface GameData {
@@ -13,6 +12,7 @@ export interface GameData {
 	votingSystem: string[];
 	players: Player[];
 	createdAt: number;
+	isCurrentlyRevealed: boolean;
 }
 
 export interface GameState {

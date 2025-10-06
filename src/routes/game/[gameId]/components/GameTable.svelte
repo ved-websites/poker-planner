@@ -1,13 +1,21 @@
 <script lang="ts">
+	import { enhance } from "$app/forms";
 	import type { Player } from "$lib";
 	import { Button } from "$lib/components/ui/button";
 
 	type Props = {
 		players: Player[];
-		onRevealCards: () => Awaitable<void>;
+		// onRevealCards: () => unknown;
+		// onStartNewRound: () => unknown;
+		isCardsRevealed: boolean;
 	};
 
-	let { players, onRevealCards }: Props = $props();
+	let {
+		players,
+		// onRevealCards,
+		// onStartNewRound,
+		isCardsRevealed = $bindable(false),
+	}: Props = $props();
 
 	// const initialPlayers = players;
 
@@ -51,13 +59,23 @@
 		return `${y}px`;
 	}
 
-	let atLeastOnePlayerVoted = players.some((player) => player.voted);
+	let atLeastOnePlayerVoted = $derived(
+		players.some((player) => player.vote !== undefined)
+	);
 </script>
 
 <div class="circle-table bg-gray-400">
-	<Button onclick={onRevealCards} disabled={!atLeastOnePlayerVoted}>
-		Reveal cards
-	</Button>
+	{#if !isCardsRevealed}
+		<form action="?/reveal" method="POST" use:enhance>
+			<Button type="submit" disabled={!atLeastOnePlayerVoted}>
+				Reveal cards
+			</Button>
+		</form>
+	{:else}
+		<form action="?/newround" method="POST" use:enhance>
+			<Button type="submit">Start new round</Button>
+		</form>
+	{/if}
 	{#each players as player, i}
 		<span
 			class="player"
@@ -69,14 +87,17 @@
 			<div
 				class={{
 					"player-card flex items-center justify-center": true,
-					"bg-gray-500!": player.vote === undefined,
+					"bg-gray-500!":
+						player.vote === undefined && !isCardsRevealed,
+					"italic bg-gray-300!":
+						player.vote === undefined && isCardsRevealed,
 				}}
 			>
-				<span>
-					{#if player.voted && player.vote === undefined}
+				<span class="text-black">
+					{#if !isCardsRevealed && player.vote !== undefined}
 						✅
-					{:else}
-						{player.vote}
+					{:else if isCardsRevealed}
+						{player.vote ?? "☕"}
 					{/if}
 				</span>
 			</div>

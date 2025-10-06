@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { goto } from "$app/navigation";
 	import { page } from "$app/state";
-	import type { Player } from "$lib";
+	import type { GameData, Player } from "$lib";
 	import { onDestroy } from "svelte";
 	import type { Unsubscriber } from "svelte/store";
 	import { source, type Source } from "sveltekit-sse";
@@ -14,7 +14,7 @@
 
 	let game = $state(data.game);
 
-	function onRevealCards() {}
+	let currentChoice = $state<string | null>(null);
 
 	let gameState = $state<"setup" | "joining" | "joined">("setup");
 
@@ -37,6 +37,9 @@
 
 		subscribeToNewPlayers();
 		subscribeToPlayersLeaving();
+		subscribeToPlayerVote();
+		subscribeToGameRevealed();
+		subscribeToGameNewRound();
 	}
 
 	function subscribeToNewPlayers() {
@@ -87,6 +90,72 @@
 		eventUnsubscribers.add(unsubscribe);
 	}
 
+	function subscribeToPlayerVote() {
+		if (!connectionSource) {
+			return;
+		}
+
+		const playerVotedEvents = connectionSource
+			.select("player-voted")
+			.json<Pick<Player, "id" | "vote">>();
+
+		const unsubscribe = playerVotedEvents.subscribe((player) => {
+			if (!player) {
+				return;
+			}
+
+			const gamePlayer = game.players.find((p) => p.id === player.id);
+
+			if (gamePlayer) {
+				gamePlayer.vote = player.vote;
+			}
+		});
+
+		eventUnsubscribers.add(unsubscribe);
+	}
+
+	function subscribeToGameRevealed() {
+		if (!connectionSource) {
+			return;
+		}
+
+		const gameRevealedEvents = connectionSource
+			.select("game-reveal-cards")
+			.json<GameData>();
+
+		const unsubscribe = gameRevealedEvents.subscribe((gameData) => {
+			if (!gameData) {
+				return;
+			}
+
+			game = gameData;
+		});
+
+		eventUnsubscribers.add(unsubscribe);
+	}
+
+	function subscribeToGameNewRound() {
+		if (!connectionSource) {
+			return;
+		}
+
+		const gameNewRoundEvents = connectionSource
+			.select("game-new-round")
+			.json<GameData>();
+
+		const unsubscribe = gameNewRoundEvents.subscribe((gameData) => {
+			if (!gameData) {
+				return;
+			}
+
+			game = gameData;
+
+			currentChoice = null;
+		});
+
+		eventUnsubscribers.add(unsubscribe);
+	}
+
 	function clearAllSubscriptions() {
 		eventUnsubscribers.forEach((unsub) => {
 			unsub();
@@ -121,9 +190,16 @@
 		<CopyGameUrl />
 	</div>
 
-	<GameTable players={game.players} {onRevealCards} />
+	<GameTable
+		players={game.players}
+		isCardsRevealed={game.isCurrentlyRevealed}
+	/>
 </div>
 
 <div class="mb-5">
-	<ChoiceSelector choices={game.votingSystem} />
+	<ChoiceSelector
+		choices={game.votingSystem}
+		locked={game.isCurrentlyRevealed}
+		bind:currentVote={currentChoice}
+	/>
 </div>

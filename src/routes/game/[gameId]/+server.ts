@@ -41,7 +41,6 @@ export const POST: RequestHandler = async ({ params, cookies, url }) => {
 				const newPlayer = {
 					id: userId,
 					name: userName,
-					voted: false,
 				} satisfies Player;
 
 				game.data.players.push(newPlayer);

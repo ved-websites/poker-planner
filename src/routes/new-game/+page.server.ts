@@ -36,11 +36,11 @@ export const actions = {
 				{
 					id: userId,
 					name: form.data.hostName,
-					voted: false,
 				},
 			],
 			votingSystem: form.data.votingSystem.split(","),
 			createdAt: Date.now(),
+			isCurrentlyRevealed: false,
 		} satisfies GameData;
 
 		games.set(randomId, {
