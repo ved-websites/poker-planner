@@ -3,6 +3,7 @@
 	import { Button } from "$lib/components/ui/button";
 	import { Input } from "$lib/components/ui/input";
 	import { Label } from "$lib/components/ui/label";
+	import { PersistedState } from "runed";
 
 	interface Props {
 		isLoading?: boolean;
@@ -12,7 +13,7 @@
 
 	let { isLoading = $bindable(false), onSubmit, onCancel }: Props = $props();
 
-	let name = $state<string>();
+	let name = new PersistedState<string>("player-name", "");
 </script>
 
 <AlertDialog.Root open>
@@ -28,7 +29,7 @@
 				<Label for="name" class="text-right">Name</Label>
 				<Input
 					id="name"
-					bind:value={name}
+					bind:value={name.current}
 					class="col-span-3"
 					autocomplete="off"
 				/>
@@ -38,7 +39,7 @@
 			<Button onclick={onCancel}>Cancel</Button>
 			<AlertDialog.Action
 				disabled={!name || isLoading}
-				onclick={() => onSubmit(name!)}
+				onclick={() => onSubmit(name.current)}
 			>
 				Continue
 			</AlertDialog.Action>

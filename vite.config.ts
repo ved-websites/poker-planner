@@ -1,6 +1,7 @@
 import { paraglideVitePlugin } from "@inlang/paraglide-js";
 import { sveltekit } from "@sveltejs/kit/vite";
 import tailwindcss from "@tailwindcss/vite";
+import { nodeLoaderPlugin } from "@vavite/node-loader/plugin";
 import { defineConfig } from "vite";
 
 export default defineConfig({
@@ -11,6 +12,7 @@ export default defineConfig({
 			project: "./project.inlang",
 			outdir: "./src/lib/paraglide",
 		}),
+		nodeLoaderPlugin(),
 	],
 	optimizeDeps: {
 		include: ["zod"],

@@ -12,20 +12,10 @@ export const load = (async ({ params, cookies }) => {
 
 	const userId = cookies.get(USER_ID_COOKIE_NAME);
 
-	const isUserInGame = game.data.players.some((p) => p.id === userId);
-	console.log(
-		JSON.stringify(
-			{
-				players: game.data.players,
-				userId,
-			},
-			null,
-			2
-		)
-	);
+	const existingUser = game.data.players.find((p) => p.id === userId);
 
 	return {
 		game: game.data,
-		isUserInGame,
+		existingUser,
 	};
 }) satisfies PageServerLoad;
