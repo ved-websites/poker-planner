@@ -196,6 +196,18 @@
 	/>
 </div>
 
+{#if game.isCurrentlyRevealed}
+	{@const voteAverage =
+		game.players.reduce((sum, { vote }) => {
+			const numericVote = Number(vote);
+			return sum + (isNaN(numericVote) ? 0 : numericVote);
+		}, 0) / game.players.filter((p) => !isNaN(Number(p.vote))).length}
+
+	<div class="mb-3 self-center">
+		<span>Average : {Math.round(voteAverage * 10) / 10}</span>
+	</div>
+{/if}
+
 <div class="mb-5">
 	<ChoiceSelector
 		choices={game.votingSystem}
