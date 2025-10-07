@@ -17,6 +17,7 @@ RUN --mount=type=cache,id=pnpm,target=$PNPM_HOME/store pnpm install --frozen-loc
 
 COPY . .
 
+RUN pnpm run prepare
 RUN pnpm run build
 
 # ====================
