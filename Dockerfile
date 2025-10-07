@@ -1,0 +1,41 @@
+FROM arm64v8/node:22-alpine AS base
+
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+
+WORKDIR /app
+
+COPY package.json pnpm-lock.yaml ./
+
+RUN corepack enable
+
+# ====================
+
+FROM base AS build
+
+RUN --mount=type=cache,id=pnpm,target=$PNPM_HOME/store pnpm install --frozen-lockfile
+
+COPY . .
+
+RUN pnpm run build
+
+# ====================
+
+FROM base AS prod-deps
+
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --prod --frozen-lockfile
+
+# ====================
+
+FROM base AS dokploy
+
+ENV NODE_ENV=production
+
+# Copy only the necessary files
+COPY --from=prod-deps /app/node_modules /app/node_modules
+COPY --from=build /app/build ./build
+COPY --from=build /app/package.json ./package.json
+
+EXPOSE 3000
+
+CMD [ "pnpm", "run", "start:prod" ]
