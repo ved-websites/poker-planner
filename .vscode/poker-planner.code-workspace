@@ -48,12 +48,11 @@
 		"css.validate": false,
 		"less.validate": false,
 		"scss.validate": false,
-		"i18n-ally.localesPaths": ["messages"],
-		"sherlock.extract": {
-			"autoHumanId": {
-				"enabled": false
-			}
-        },
-        "i18n-ally.keystyle": "flat"
+		"i18n-ally.localesPaths": [
+			"src/locales"
+		],
+		"i18n-gettext.localesConfig.basePath": "src/locales",
+		"i18n-gettext.localesConfig.pattern": "${locale}.po",
+		"i18n-gettext.localesConfig.type": "flat",
 	}
 }

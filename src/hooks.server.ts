@@ -1,25 +1,25 @@
-import { USER_ID_COOKIE_NAME } from "$lib/cookies";
-import { paraglideMiddleware } from "$lib/paraglide/server";
+import { LANGUAGE_COOKIE_NAME, USER_ID_COOKIE_NAME } from "$lib/cookies";
 import type { Handle } from "@sveltejs/kit";
+import { locales } from "virtual:wuchale/locales";
+import { loadLocales, runWithLocale } from "wuchale/load-utils/server";
+import { key, loadCatalog, loadIDs } from "./locales/loader.server.svelte";
 
-const handleParaglide: Handle = ({ event, resolve }) =>
-	paraglideMiddleware(event.request, ({ request, locale }) => {
-		event.request = request;
+loadLocales(key, loadIDs, loadCatalog, locales);
 
-		const userId = event.cookies.get(USER_ID_COOKIE_NAME);
+export const handle: Handle = async ({ event, resolve }) => {
+	const userId = event.cookies.get(USER_ID_COOKIE_NAME);
 
-		if (!userId) {
-			event.cookies.set(USER_ID_COOKIE_NAME, crypto.randomUUID(), {
-				path: "/",
-				httpOnly: true,
-				expires: new Date(Date.now() + 1000 * 60 * 60 * 12),
-			});
-		}
-
-		return resolve(event, {
-			transformPageChunk: ({ html }) =>
-				html.replace("%paraglide.lang%", locale),
+	if (!userId) {
+		event.cookies.set(USER_ID_COOKIE_NAME, crypto.randomUUID(), {
+			path: "/",
+			httpOnly: true,
+			expires: new Date(Date.now() + 1000 * 60 * 60 * 12),
 		});
-	});
+	}
 
-export const handle: Handle = handleParaglide;
+	const locale = event.cookies.get(LANGUAGE_COOKIE_NAME) ?? "en";
+
+	event.locals.locale = locale;
+
+	return runWithLocale(locale, () => resolve(event));
+};

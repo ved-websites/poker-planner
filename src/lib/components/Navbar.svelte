@@ -2,7 +2,6 @@
 	import navbarLogo from "$lib/assets/navbar-logo.png";
 	import * as NavigationMenu from "$lib/components/ui/navigation-menu/index.js";
 	import { navigationMenuTriggerStyle } from "$lib/components/ui/navigation-menu/navigation-menu-trigger.svelte";
-	import { m } from "$lib/paraglide/messages";
 	import DarkModeButton from "./DarkModeButton.svelte";
 	import LanguageDropdown from "./LanguageDropdown.svelte";
 </script>
@@ -20,7 +19,7 @@
 					<NavigationMenu.Link>
 						{#snippet child()}
 							<a href="/" class={navigationMenuTriggerStyle()}>
-								{m.navbar_menu_home()}
+								Home
 							</a>
 						{/snippet}
 					</NavigationMenu.Link>
@@ -33,7 +32,7 @@
 								href="/about"
 								class={navigationMenuTriggerStyle()}
 							>
-								{m.navbar_menu_about()}
+								About
 							</a>
 						{/snippet}
 					</NavigationMenu.Link>

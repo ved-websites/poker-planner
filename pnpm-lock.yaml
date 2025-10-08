@@ -8,12 +8,21 @@ importers:
 
   .:
     dependencies:
+      '@wuchale/svelte':
+        specifier: ^0.16.3
+        version: 0.16.3
+      '@wuchale/vite-plugin':
+        specifier: ^0.14.7
+        version: 0.14.7
       mode-watcher:
         specifier: ^1.1.0
         version: 1.1.0(svelte@5.39.8)
       runed:
         specifier: ^0.34.0
         version: 0.34.0(@sveltejs/kit@2.43.8(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.39.8)(vite@7.1.9(jiti@2.6.1)(lightningcss@1.30.1)))(svelte@5.39.8)(vite@7.1.9(jiti@2.6.1)(lightningcss@1.30.1)))(svelte@5.39.8)
+      wuchale:
+        specifier: ^0.17.2
+        version: 0.17.2
     devDependencies:
       '@inlang/paraglide-js':
         specifier: ^2.3.2
@@ -697,6 +706,12 @@ packages:
     resolution: {integrity: sha512-ZtvYkYpZOYdvbws3uaOAvTFuvFXoQGAtmzeiXu+XSMGxi5GVsODpoI9Xu9TplEMuD/5fmAtBbKb9cQHkWkLXDQ==}
     engines: {node: '>=18.16.0'}
 
+  '@wuchale/svelte@0.16.3':
+    resolution: {integrity: sha512-aOyqIHXfUhAiOaf8kDhkVxyuzl9e8YG6PSXMst4D/VDGqOT2zdgJS/w411zjlVSLisijDXUTmwElld3V+1tBgg==}
+
+  '@wuchale/vite-plugin@0.14.7':
+    resolution: {integrity: sha512-+Jmhc1tnwm0H/wSdQdssfzg82uDc8ky/dU7ONXYiHpCNAeLpHCQhfFdUJVgBbqB6/GZ5T5CGls2nJC0ry5bNrw==}
+
   acorn@8.15.0:
     resolution: {integrity: sha512-NZyJarBfL7nWwIq+FDL6Zp/yHEhePMNnnJ0y3qfieCrmNvYct8uvtiV41UvlSe6apAfk0fY1FbWx+NwfmpvtTg==}
     engines: {node: '>=0.4.0'}
@@ -1051,6 +1066,9 @@ packages:
     resolution: {integrity: sha512-5gTmgEY/sqK6gFXLIsQNH19lWb4ebPDLA4SdLP7dsWkIXHWlG66oPuVvXSGFPppYZz8ZDZq0dYYrbHfBCVUb1Q==}
     engines: {node: '>=12'}
 
+  pofile@1.1.4:
+    resolution: {integrity: sha512-r6Q21sKsY1AjTVVjOuU02VYKVNQGJNQHjTIvs4dEbeuuYfxgYk/DGD2mqqq4RDaVkwdSq0VEtmQUOPe/wH8X3g==}
+
   postcss-selector-parser@6.0.10:
     resolution: {integrity: sha512-IQ7TZdoaqbT+LCpShg46jnZVlhWD2w6iQYAcYXfHARZ7X1t/UGhhceQDs5X0cGqKvYlHNOuv7Oa1xmb0oQuA3w==}
     engines: {node: '>=4'}
@@ -1338,6 +1356,10 @@ packages:
 
   webpack-virtual-modules@0.6.2:
     resolution: {integrity: sha512-66/V2i5hQanC51vBQKPH4aI8NMAcBW59FVBs+rC7eGHupMyfn34q7rZIE+ETlJ+XTevqfUhVVBgSUNSW2flEUQ==}
+
+  wuchale@0.17.2:
+    resolution: {integrity: sha512-f/3GF0xGcP+1A2pCUyKEmjxyG0IXRFh3sv265T/tgDoFl+0/Sm4WR8abSQMpAdlEYZMJ8KcrrLZUaEgcn1OCxA==}
+    hasBin: true
 
   yallist@5.0.0:
     resolution: {integrity: sha512-YgvUTfwqyc7UXVMrB+SImsVYSmTS8X/tSrtdNZMImM+n7+QTriRXyXim0mBrTXNeqzVF0KWGgHPeiyViFFrNDw==}
@@ -1865,6 +1887,15 @@ snapshots:
       validator: 13.15.15
     optional: true
 
+  '@wuchale/svelte@0.16.3':
+    dependencies:
+      svelte: 5.39.8
+      wuchale: 0.17.2
+
+  '@wuchale/vite-plugin@0.14.7':
+    dependencies:
+      wuchale: 0.17.2
+
   acorn@8.15.0: {}
 
   aria-query@5.3.2: {}
@@ -2164,6 +2195,8 @@ snapshots:
 
   picomatch@4.0.3: {}
 
+  pofile@1.1.4: {}
+
   postcss-selector-parser@6.0.10:
     dependencies:
       cssesc: 3.0.0
@@ -2461,6 +2494,16 @@ snapshots:
       vite: 7.1.9(jiti@2.6.1)(lightningcss@1.30.1)
 
   webpack-virtual-modules@0.6.2: {}
+
+  wuchale@0.17.2:
+    dependencies:
+      '@sveltejs/acorn-typescript': 1.0.6(acorn@8.15.0)
+      acorn: 8.15.0
+      chokidar: 4.0.3
+      magic-string: 0.30.19
+      picomatch: 4.0.3
+      pofile: 1.1.4
+      tinyglobby: 0.2.15
 
   yallist@5.0.0: {}
 

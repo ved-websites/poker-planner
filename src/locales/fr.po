@@ -1,0 +1,118 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-07T21:03:31.761Z\n"
+"PO-Revision-Date: 2025-10-08T01:48:00.347Z\n"
+"Last-Translator: \n"
+"Language: fr\n"
+"Language-Team: \n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
+"MIME-Version: 1.0\n"
+
+#: src/routes/+page.svelte
+msgid "Start new game"
+msgstr "Débuter une nouvelle partie"
+
+#: src/lib/components/Navbar.svelte
+#: src/routes/+page.svelte
+msgid "Poker Planner Logo"
+msgstr "Logo Poker Planner"
+
+#: src/lib/components/DarkModeButton.svelte
+msgid "Toggle theme"
+msgstr "Basculer le thème"
+
+#: src/lib/components/LanguageDropdown.svelte
+msgid "Language"
+msgstr "Langue"
+
+#: src/lib/components/Navbar.svelte
+msgid "Home"
+msgstr "Accueil"
+
+#: src/lib/components/Navbar.svelte
+msgid "About"
+msgstr "À propos"
+
+#: src/routes/game/[gameId]/+page.svelte
+msgid "Welcome to <0/>!"
+msgstr "Bienvenue sur <0/> !"
+
+#: src/routes/game/[gameId]/+page.svelte
+msgid "Copy game url (invite link) :"
+msgstr "Copier l'URL du jeu (lien d'invitation) :"
+
+#: src/routes/game/[gameId]/+page.svelte
+#. placeholder {0}: Math.round(voteAverage * 10) / 10
+msgid "Average : {0}"
+msgstr "Moyenne : {0}"
+
+#: src/routes/about/+page.svelte
+msgid ""
+"This website was created to fulfill the need for a free planning poker tool\n"
+"in an online ecosystem where most options are paid."
+msgstr ""
+"Ce site web a été créé pour répondre au besoin d'un outil de planning poker "
+"gratuit dans un écosystème en ligne où la plupart des options sont payantes."
+
+#: src/routes/about/+page.svelte
+msgid "made with ❤️ by <0>V-ed</0>"
+msgstr "fait avec ❤️ par <0>V-ed</0>"
+
+#: src/routes/new-game/+page.svelte
+msgid "Your name"
+msgstr "Votre nom"
+
+#: src/routes/new-game/+page.svelte
+msgid "Game Name (optional)"
+msgstr "Nom de la partie (facultatif)"
+
+#: src/routes/new-game/+page.svelte
+msgid "Voting System"
+msgstr "Système de vote"
+
+#: src/routes/new-game/+page.svelte
+msgid "Submit"
+msgstr "Soumettre"
+
+#: src/lib/components/ui/dialog/dialog-content.svelte
+msgid "Close"
+msgstr "Fermer"
+
+#: src/routes/game/[gameId]/components/CopyGameUrl.svelte
+msgid "Invite link copied!"
+msgstr "Lien d'invitation copié!"
+
+#: src/routes/game/[gameId]/components/GameTable.svelte
+msgid "Reveal cards"
+msgstr "Révéler les cartes"
+
+#: src/routes/game/[gameId]/components/GameTable.svelte
+msgid "Start new round"
+msgstr "Commencer une nouvelle manche"
+
+#: src/routes/game/[gameId]/components/PlayerNameDialog.svelte
+msgid "Enter your name"
+msgstr "Entrez votre nom"
+
+#: src/routes/game/[gameId]/components/PlayerNameDialog.svelte
+msgid "This name will show under your card."
+msgstr "Ce nom s'affichera sous votre carte."
+
+#: src/routes/game/[gameId]/components/PlayerNameDialog.svelte
+msgid "Name"
+msgstr "Nom"
+
+#: src/routes/game/[gameId]/components/PlayerNameDialog.svelte
+msgid "Cancel"
+msgstr "Annuler"
+
+#: src/routes/game/[gameId]/components/PlayerNameDialog.svelte
+msgid "Continue"
+msgstr "Continuer"
+
+#~ msgid "English"
+#~ msgstr ""

@@ -19,7 +19,6 @@
 		"start:prod": "node build"
 	},
 	"devDependencies": {
-		"@inlang/paraglide-js": "^2.3.2",
 		"@internationalized/date": "^3.8.1",
 		"@lucide/svelte": "^0.544.0",
 		"@sveltejs/adapter-auto": "^6.1.0",
@@ -51,7 +50,10 @@
 		]
 	},
 	"dependencies": {
+		"@wuchale/svelte": "^0.16.3",
+		"@wuchale/vite-plugin": "^0.14.7",
 		"mode-watcher": "^1.1.0",
-		"runed": "^0.34.0"
+		"runed": "^0.34.0",
+		"wuchale": "^0.17.2"
 	}
 }

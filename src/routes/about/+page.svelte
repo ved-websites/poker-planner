@@ -1,9 +1,6 @@
-<script lang="ts">
-	import { m } from "$lib/paraglide/messages";
-</script>
-
 <p>
-	{m.about_main_text()}
+	This website was created to fulfill the need for a free planning poker tool
+	in an online ecosystem where most options are paid.
 </p>
 
 <footer class="mt-3 text-center">
