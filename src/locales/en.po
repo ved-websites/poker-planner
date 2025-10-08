@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-07T21:03:31.759Z\n"
-"PO-Revision-Date: 2025-10-08T05:55:01.971Z\n"
+"PO-Revision-Date: 2025-10-08T06:17:33.708Z\n"
 "Last-Translator: \n"
 "Language: en\n"
 "Language-Team: \n"
@@ -29,22 +29,16 @@ msgstr "Toggle theme"
 msgid "Language"
 msgstr "Language"
 
-#~ msgid "Home"
-#~ msgstr "Home"
-
 #: src/lib/components/Navbar.svelte
 msgid "About"
 msgstr "About"
-
-#~ msgid "Welcome to <0/>!"
-#~ msgstr "Welcome to <0/>!"
 
 #: src/lib/components/Navbar.svelte
 msgid "Copy game url (invite link) :"
 msgstr "Copy game url (invite link) :"
 
-#. placeholder {0}: formattedVoteAverage
 #: src/routes/game/[gameId]/components/ChoiceResults.svelte
+#. placeholder {0}: formattedVoteAverage
 msgid "Average : {0}"
 msgstr "Average : {0}"
 
@@ -117,13 +111,10 @@ msgstr "Continue"
 msgid "Seems like nobody voted a number..."
 msgstr "Seems like nobody voted a number..."
 
-#. placeholder {0}: version
 #: src/lib/components/Navbar.svelte
+#. placeholder {0}: version
 msgid "v{0}"
 msgstr "v{0}"
-
-#~ msgid "Only the host can progress the game"
-#~ msgstr "Only the host can progress the game"
 
 #: src/routes/new-game/+page.svelte
 msgid "Only allow host to progress the game"
@@ -140,3 +131,23 @@ msgstr "Cards revealed! Waiting for the host to start a new round..."
 #: src/lib/components/Navbar.svelte
 msgid "Game ID: <0/>"
 msgstr "Game ID: <0/>"
+
+#: src/routes/+error.svelte
+msgid "Oh noes, seems like an error happened :/"
+msgstr "Oh noes, seems like an error happened :/"
+
+#: src/routes/+error.svelte
+msgid "Go back to home screen"
+msgstr "Go back to home screen"
+
+#~ msgid "Home"
+#~ msgstr "Home"
+
+#~ msgid "Welcome to <0/>!"
+#~ msgstr "Welcome to <0/>!"
+
+#~ msgid "Only the host can progress the game"
+#~ msgstr "Only the host can progress the game"
+
+#~ msgid "{0} - Error"
+#~ msgstr "{0} - Error"

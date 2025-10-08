@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-07T21:03:31.761Z\n"
-"PO-Revision-Date: 2025-10-08T05:55:01.983Z\n"
+"PO-Revision-Date: 2025-10-08T06:17:33.711Z\n"
 "Last-Translator: \n"
 "Language: fr\n"
 "Language-Team: \n"
@@ -37,8 +37,8 @@ msgstr "À propos"
 msgid "Copy game url (invite link) :"
 msgstr "Copier l'URL du jeu (lien d'invitation) :"
 
-#. placeholder {0}: formattedVoteAverage
 #: src/routes/game/[gameId]/components/ChoiceResults.svelte
+#. placeholder {0}: formattedVoteAverage
 msgid "Average : {0}"
 msgstr "Moyenne : {0}"
 
@@ -46,7 +46,9 @@ msgstr "Moyenne : {0}"
 msgid ""
 "This website was created to fulfill the need for a free planning poker tool\n"
 "in an online ecosystem where most options are paid."
-msgstr "Ce site web a été créé pour répondre au besoin d'un outil de planning poker gratuit dans un écosystème en ligne où la plupart des options sont payantes."
+msgstr ""
+"Ce site web a été créé pour répondre au besoin d'un outil de planning poker "
+"gratuit dans un écosystème en ligne où la plupart des options sont payantes."
 
 #: src/routes/about/+page.svelte
 msgid "made with ❤️ by <0>V-ed</0>"
@@ -83,7 +85,7 @@ msgstr "Révéler les cartes"
 
 #: src/routes/game/[gameId]/components/GameTable.svelte
 msgid "Start new round"
-msgstr "Commencer une nouvelle manche"
+msgstr "Nouvelle manche"
 
 #: src/routes/game/[gameId]/components/PlayerNameDialog.svelte
 msgid "Enter your name"
@@ -109,8 +111,8 @@ msgstr "Continuer"
 msgid "Seems like nobody voted a number..."
 msgstr "On dirait que personne n'a voté de nombre..."
 
-#. placeholder {0}: version
 #: src/lib/components/Navbar.svelte
+#. placeholder {0}: version
 msgid "v{0}"
 msgstr "v{0}"
 
@@ -130,6 +132,14 @@ msgstr "Cartes révélées! En attendant que l'hôte commence un nouveau tour ..
 msgid "Game ID: <0/>"
 msgstr "Game ID: <0/>"
 
+#: src/routes/+error.svelte
+msgid "Oh noes, seems like an error happened :/"
+msgstr "Oups, on dirait qu'une erreur est survenue :/"
+
+#: src/routes/+error.svelte
+msgid "Go back to home screen"
+msgstr "Retourner à l'écran d'accueil"
+
 #~ msgid "Home"
 #~ msgstr "Accueil"
 
@@ -137,4 +147,7 @@ msgstr "Game ID: <0/>"
 #~ msgstr "Bienvenue sur <0/> !"
 
 #~ msgid "Only the host can progress the game"
+#~ msgstr ""
+
+#~ msgid "{0} - Error"
 #~ msgstr ""
