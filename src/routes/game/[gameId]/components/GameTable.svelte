@@ -15,30 +15,30 @@
 		activateGameButtons = true,
 	}: Props = $props();
 
-	const initialPlayers = players;
+	// const initialPlayers = players;
 
-	let addedPlayerCount = $state(7);
+	// let addedPlayerCount = $state(7);
 
-	$effect(() => {
-		players = [
-			...initialPlayers,
-			...Array(addedPlayerCount)
-				.fill(null)
-				.map<(typeof initialPlayers)[number]>((_, i) => ({
-					id: crypto.randomUUID(),
-					name: `Name ${i}`,
-					voted: false,
-				})),
-		];
-	});
+	// $effect(() => {
+	// 	players = [
+	// 		...initialPlayers,
+	// 		...Array(addedPlayerCount)
+	// 			.fill(null)
+	// 			.map<(typeof initialPlayers)[number]>((_, i) => ({
+	// 				id: crypto.randomUUID(),
+	// 				name: `Name ${i}`,
+	// 				voted: false,
+	// 			})),
+	// 	];
+	// });
 
-	setInterval(() => {
-		if (addedPlayerCount >= 15) {
-			addedPlayerCount = 7;
-		} else {
-			addedPlayerCount++;
-		}
-	}, 2000);
+	// setInterval(() => {
+	// 	if (addedPlayerCount >= 15) {
+	// 		addedPlayerCount = 7;
+	// 	} else {
+	// 		addedPlayerCount++;
+	// 	}
+	// }, 2000);
 
 	function calculateLeftPosition(i: number, total: number) {
 		const angle = (2 * Math.PI * i) / total;

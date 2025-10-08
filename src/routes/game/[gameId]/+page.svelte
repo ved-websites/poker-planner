@@ -6,6 +6,7 @@
 	import { onDestroy } from "svelte";
 	import type { Unsubscriber } from "svelte/store";
 	import { source, type Source } from "sveltekit-sse";
+	import ChoiceResults from "./components/ChoiceResults.svelte";
 	import ChoiceSelector from "./components/ChoiceSelector.svelte";
 	import GameTable from "./components/GameTable.svelte";
 	import PlayerNameDialog from "./components/PlayerNameDialog.svelte";
@@ -202,23 +203,15 @@
 <div class="grow"></div>
 
 {#if game.isCurrentlyRevealed}
-	{@const voteAverage =
-		game.players.reduce((sum, { vote }) => {
-			const numericVote = Number(vote);
-			return sum + (isNaN(numericVote) ? 0 : numericVote);
-		}, 0) / game.players.filter((p) => !isNaN(Number(p.vote))).length}
-
-	<div class="mb-3 self-center">
-		{#if isNaN(voteAverage)}
-			<span>Seems like nobody voted a number...</span>
-		{:else}
-			<span>Average : {Math.round(voteAverage * 10) / 10}</span>
-		{/if}
-	</div>
+	<ChoiceResults
+		players={game.players}
+		choices={game.votingSystem}
+		currentVote={currentChoice}
+	/>
+{:else}
+	<ChoiceSelector
+		choices={game.votingSystem}
+		locked={game.isCurrentlyRevealed}
+		bind:currentVote={currentChoice}
+	/>
 {/if}
-
-<ChoiceSelector
-	choices={game.votingSystem}
-	locked={game.isCurrentlyRevealed}
-	bind:currentVote={currentChoice}
-/>

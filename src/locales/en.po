@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-07T21:03:31.759Z\n"
-"PO-Revision-Date: 2025-10-08T05:40:27.893Z\n"
+"PO-Revision-Date: 2025-10-08T05:55:01.971Z\n"
 "Last-Translator: \n"
 "Language: en\n"
 "Language-Team: \n"
@@ -43,8 +43,8 @@ msgstr "About"
 msgid "Copy game url (invite link) :"
 msgstr "Copy game url (invite link) :"
 
-#. placeholder {0}: Math.round(voteAverage * 10) / 10
-#: src/routes/game/[gameId]/+page.svelte
+#. placeholder {0}: formattedVoteAverage
+#: src/routes/game/[gameId]/components/ChoiceResults.svelte
 msgid "Average : {0}"
 msgstr "Average : {0}"
 
@@ -113,7 +113,7 @@ msgstr "Cancel"
 msgid "Continue"
 msgstr "Continue"
 
-#: src/routes/game/[gameId]/+page.svelte
+#: src/routes/game/[gameId]/components/ChoiceResults.svelte
 msgid "Seems like nobody voted a number..."
 msgstr "Seems like nobody voted a number..."
 
