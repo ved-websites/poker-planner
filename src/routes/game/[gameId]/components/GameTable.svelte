@@ -88,20 +88,7 @@
 			{/if}
 		</div>
 	{/if}
-	<!-- {#if !isCardsRevealed}
-		<form action="?/reveal" method="POST" use:enhance>
-			<Button
-				type="submit"
-				disabled={!activateGameButtons || !atLeastOnePlayerVoted}
-			>
-				Reveal cards
-			</Button>
-		</form>
-	{:else}
-		<form action="?/newround" method="POST" use:enhance>
-			<Button type="submit">Start new round</Button>
-		</form>
-	{/if} -->
+
 	{#each players as player, i}
 		<span
 			class="player"

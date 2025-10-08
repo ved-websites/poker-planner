@@ -185,21 +185,25 @@
 	/>
 {/if}
 
-<div class="grow">
-	<h2 class="text-center">Welcome to <code>{game.name}</code>!</h2>
+<div class="flex justify-between items-center gap-10">
+	<h2>
+		Welcome to <code>{game.name}</code>!
+	</h2>
 
-	<div class="flex justify-center items-center gap-2 mt-2">
+	<div class="flex justify-center items-center gap-2">
 		<span>Copy game url (invite link) :</span>
 
 		<CopyGameUrl />
 	</div>
-
-	<GameTable
-		players={game.players}
-		isCardsRevealed={game.isCurrentlyRevealed}
-		activateGameButtons={accessToGameButtons}
-	/>
 </div>
+
+<GameTable
+	players={game.players}
+	isCardsRevealed={game.isCurrentlyRevealed}
+	activateGameButtons={accessToGameButtons}
+/>
+
+<div class="grow"></div>
 
 {#if game.isCurrentlyRevealed}
 	{@const voteAverage =
