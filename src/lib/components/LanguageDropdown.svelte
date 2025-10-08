@@ -3,9 +3,8 @@
 	import { Button } from "$lib/components/ui/button";
 	import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
 	import { LANGUAGE_COOKIE_NAME } from "$lib/cookies";
-
 	import { useCookie } from "$lib/runes";
-	import { locales } from "../../locales/locales";
+	import { locales } from "virtual:wuchale/locales";
 
 	const localeCookie = useCookie<string>(LANGUAGE_COOKIE_NAME, {
 		valueWhenEmpty: () => "en",
@@ -26,10 +25,21 @@
 		invalidateAll();
 	});
 
-	let selectableLocales = locales.map((locale) => ({
-		label: locale.name,
-		value: locale.key,
-	}));
+	let selectableLocales = locales.map((locale) => {
+		const languageNames = new Intl.DisplayNames([locale], {
+			type: "language",
+		});
+
+		const label = languageNames.of(locale);
+		const capitalizedLabel = label
+			? label.charAt(0).toUpperCase() + label.slice(1)
+			: locale;
+
+		return {
+			label: capitalizedLabel,
+			value: locale,
+		};
+	});
 </script>
 
 <DropdownMenu.Root>
