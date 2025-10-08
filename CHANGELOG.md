@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.0](https://github.com/ved-websites/poker-planner/compare/poker-planner-v0.1.0...poker-planner-v0.2.0) (2025-10-08)
+
+
+### Features
+
+* persist username in game creation screen ([0ba52bb](https://github.com/ved-websites/poker-planner/commit/0ba52bb9e99eb714952e508e827559c46a9fd763))
+
+
+### Bug Fixes
+
+* show custom message when no vote is a number ([e315e89](https://github.com/ved-websites/poker-planner/commit/e315e891602c503434b9109122eb559372d7b7a7))
+
 ## [0.1.0](https://github.com/ved-websites/poker-planner/compare/poker-planner-v0.0.1...poker-planner-v0.1.0) (2025-10-07)
 
 
