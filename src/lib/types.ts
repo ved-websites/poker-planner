@@ -8,7 +8,7 @@ export interface Player {
 
 export interface GameData {
 	id: string;
-	name: string;
+	name?: string;
 	votingSystem: string[];
 	players: Player[];
 	createdAt: number;

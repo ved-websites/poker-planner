@@ -15,45 +15,45 @@
 		activateGameButtons = true,
 	}: Props = $props();
 
-	// const initialPlayers = players;
+	const initialPlayers = players;
 
-	// let addedPlayerCount = $state(0);
+	let addedPlayerCount = $state(7);
 
-	// $effect(() => {
-	// 	players = [
-	// 		...initialPlayers,
-	// 		...Array(addedPlayerCount)
-	// 			.fill(null)
-	// 			.map<(typeof initialPlayers)[number]>((_, i) => ({
-	// 				id: crypto.randomUUID(),
-	// 				name: `Name ${i}`,
-	// 				voted: false,
-	// 			})),
-	// 	];
-	// });
+	$effect(() => {
+		players = [
+			...initialPlayers,
+			...Array(addedPlayerCount)
+				.fill(null)
+				.map<(typeof initialPlayers)[number]>((_, i) => ({
+					id: crypto.randomUUID(),
+					name: `Name ${i}`,
+					voted: false,
+				})),
+		];
+	});
 
-	// setInterval(() => {
-	// 	if (addedPlayerCount >= 15) {
-	// 		addedPlayerCount = 0;
-	// 	} else {
-	// 		addedPlayerCount++;
-	// 	}
-	// }, 2000);
+	setInterval(() => {
+		if (addedPlayerCount >= 15) {
+			addedPlayerCount = 7;
+		} else {
+			addedPlayerCount++;
+		}
+	}, 2000);
 
 	function calculateLeftPosition(i: number, total: number) {
 		const angle = (2 * Math.PI * i) / total;
 		// Circle radius and center
-		const r = 220;
+		const r = 200;
 		const cx = 100;
-		const x = cx + r * Math.cos(angle) - 20;
+		const x = cx + r * Math.cos(angle) - 35;
 		return `${x}px`;
 	}
 
 	function calculateTopPosition(i: number, total: number) {
 		const angle = (2 * Math.PI * i) / total;
-		const r = 220;
+		const r = 200;
 		const cy = 100;
-		const y = cy + r * Math.sin(angle) - 20;
+		const y = cy + r * Math.sin(angle) - 25;
 		return `${y}px`;
 	}
 
@@ -122,8 +122,8 @@
 <style>
 	.circle-table {
 		position: relative;
-		width: 250px;
-		height: 250px;
+		width: 225px;
+		height: 225px;
 		border-radius: 50%;
 		margin: 10rem auto;
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);

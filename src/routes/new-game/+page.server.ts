@@ -31,7 +31,7 @@ export const actions = {
 
 		const game = {
 			id: randomId,
-			name: form.data.gameName || randomId,
+			name: form.data.gameName,
 			players: [
 				{
 					id: userId,

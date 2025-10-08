@@ -33,6 +33,7 @@
 			class={{
 				"border rounded cursor-pointer w-14 h-24 self-end": true,
 				"mb-5 bg-gray-500": currentVote === card,
+				"mt-5": currentVote !== card,
 				"hover:bg-gray-800": !locked && currentVote !== card,
 				"italic cursor-not-allowed!": locked,
 			}}

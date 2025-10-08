@@ -2,17 +2,23 @@
 	import { goto } from "$app/navigation";
 	import { page } from "$app/state";
 	import type { GameData, Player } from "$lib";
+	import { gameContext } from "$lib/runes/game.context.svelte";
 	import { onDestroy } from "svelte";
 	import type { Unsubscriber } from "svelte/store";
 	import { source, type Source } from "sveltekit-sse";
 	import ChoiceSelector from "./components/ChoiceSelector.svelte";
-	import CopyGameUrl from "./components/CopyGameUrl.svelte";
 	import GameTable from "./components/GameTable.svelte";
 	import PlayerNameDialog from "./components/PlayerNameDialog.svelte";
 
 	let { data } = $props();
 
 	let game = $state(data.game);
+
+	const globalGameContext = gameContext.get();
+
+	$effect(() => {
+		globalGameContext.value = game;
+	});
 
 	let currentChoice = $state<string | null>(null);
 
@@ -162,6 +168,8 @@
 
 			eventUnsubscribers.delete(unsub);
 		});
+
+		globalGameContext.value = null;
 	}
 
 	onDestroy(() => {
@@ -184,18 +192,6 @@
 		onCancel={() => goto("/")}
 	/>
 {/if}
-
-<div class="flex justify-between items-center gap-10">
-	<h2>
-		Welcome to <code>{game.name}</code>!
-	</h2>
-
-	<div class="flex justify-center items-center gap-2">
-		<span>Copy game url (invite link) :</span>
-
-		<CopyGameUrl />
-	</div>
-</div>
 
 <GameTable
 	players={game.players}
@@ -221,10 +217,8 @@
 	</div>
 {/if}
 
-<div class="mb-5">
-	<ChoiceSelector
-		choices={game.votingSystem}
-		locked={game.isCurrentlyRevealed}
-		bind:currentVote={currentChoice}
-	/>
-</div>
+<ChoiceSelector
+	choices={game.votingSystem}
+	locked={game.isCurrentlyRevealed}
+	bind:currentVote={currentChoice}
+/>

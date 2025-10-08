@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-07T21:03:31.761Z\n"
-"PO-Revision-Date: 2025-10-08T03:26:28.652Z\n"
+"PO-Revision-Date: 2025-10-08T05:40:27.896Z\n"
 "Last-Translator: \n"
 "Language: fr\n"
 "Language-Team: \n"
@@ -30,18 +30,10 @@ msgid "Language"
 msgstr "Langue"
 
 #: src/lib/components/Navbar.svelte
-msgid "Home"
-msgstr "Accueil"
-
-#: src/lib/components/Navbar.svelte
 msgid "About"
 msgstr "À propos"
 
-#: src/routes/game/[gameId]/+page.svelte
-msgid "Welcome to <0/>!"
-msgstr "Bienvenue sur <0/> !"
-
-#: src/routes/game/[gameId]/+page.svelte
+#: src/lib/components/Navbar.svelte
 msgid "Copy game url (invite link) :"
 msgstr "Copier l'URL du jeu (lien d'invitation) :"
 
@@ -82,6 +74,7 @@ msgstr "Soumettre"
 msgid "Close"
 msgstr "Fermer"
 
+#: src/lib/components/CopyGameUrl.svelte
 #: src/routes/game/[gameId]/components/CopyGameUrl.svelte
 msgid "Invite link copied!"
 msgstr "Lien d'invitation copié!"
@@ -134,6 +127,16 @@ msgstr "En attente que l'hôte révèle les cartes..."
 #: src/routes/game/[gameId]/components/GameTable.svelte
 msgid "Cards revealed! Waiting for the host to start a new round..."
 msgstr "Cartes révélées! En attendant que l'hôte commence un nouveau tour ..."
+
+#: src/lib/components/Navbar.svelte
+msgid "Game ID: <0/>"
+msgstr "Game ID: <0/>"
+
+#~ msgid "Home"
+#~ msgstr "Accueil"
+
+#~ msgid "Welcome to <0/>!"
+#~ msgstr "Bienvenue sur <0/> !"
 
 #~ msgid "Only the host can progress the game"
 #~ msgstr ""
