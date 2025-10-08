@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.0](https://github.com/ved-websites/poker-planner/compare/poker-planner-v0.2.0...poker-planner-v0.3.0) (2025-10-08)
+
+
+### Features
+
+* add current version number to navbar ([807d22d](https://github.com/ved-websites/poker-planner/commit/807d22d518f6f69cb0741e545f3127e11a2e3029))
+* add option to allow only the host to progress the game ([254f730](https://github.com/ved-websites/poker-planner/commit/254f730fe08aa3cbd0af02ed25f8e49d477b4e59))
+
 ## [0.2.0](https://github.com/ved-websites/poker-planner/compare/poker-planner-v0.1.0...poker-planner-v0.2.0) (2025-10-08)
 
 
