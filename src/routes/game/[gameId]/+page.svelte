@@ -204,7 +204,11 @@
 		}, 0) / game.players.filter((p) => !isNaN(Number(p.vote))).length}
 
 	<div class="mb-3 self-center">
-		<span>Average : {Math.round(voteAverage * 10) / 10}</span>
+		{#if isNaN(voteAverage)}
+			<span>Seems like nobody voted a number...</span>
+		{:else}
+			<span>Average : {Math.round(voteAverage * 10) / 10}</span>
+		{/if}
 	</div>
 {/if}
 
