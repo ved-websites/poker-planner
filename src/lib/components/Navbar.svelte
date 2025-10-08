@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { version } from "$app/environment";
 	import navbarLogo from "$lib/assets/navbar-logo.png";
 	import * as NavigationMenu from "$lib/components/ui/navigation-menu/index.js";
 	import { navigationMenuTriggerStyle } from "$lib/components/ui/navigation-menu/navigation-menu-trigger.svelte";
@@ -40,7 +41,13 @@
 			</NavigationMenu.List>
 		</NavigationMenu.Root>
 	</div>
-	<div class="flex gap-5">
+	<div class="flex gap-5 items-center">
+		<a
+			href="https://github.com/ved-websites/poker-planner/releases"
+			class="link"
+		>
+			v{version}
+		</a>
 		<LanguageDropdown />
 		<DarkModeButton />
 	</div>

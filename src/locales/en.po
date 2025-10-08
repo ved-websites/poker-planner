@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-07T21:03:31.759Z\n"
-"PO-Revision-Date: 2025-10-08T02:03:04.847Z\n"
+"PO-Revision-Date: 2025-10-08T02:56:51.240Z\n"
 "Last-Translator: \n"
 "Language: en\n"
 "Language-Team: \n"
@@ -24,9 +24,6 @@ msgstr "Poker Planner Logo"
 #: src/lib/components/DarkModeButton.svelte
 msgid "Toggle theme"
 msgstr "Toggle theme"
-
-#~ msgid "English"
-#~ msgstr "English"
 
 #: src/lib/components/LanguageDropdown.svelte
 msgid "Language"
@@ -117,9 +114,11 @@ msgstr "Cancel"
 msgid "Continue"
 msgstr "Continue"
 
-#~ msgid "Seems like nobody voted a number!"
-#~ msgstr "Seems like nobody voted a number!"
-
 #: src/routes/game/[gameId]/+page.svelte
 msgid "Seems like nobody voted a number..."
 msgstr "Seems like nobody voted a number..."
+
+#. placeholder {0}: version
+#: src/lib/components/Navbar.svelte
+msgid "v{0}"
+msgstr "v{0}"
