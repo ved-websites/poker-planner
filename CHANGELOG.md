@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.4.0](https://github.com/ved-websites/poker-planner/compare/poker-planner-v0.3.0...poker-planner-v0.4.0) (2025-10-08)
+
+
+### Features
+
+* better results visual on cards revealed ([2e2f58f](https://github.com/ved-websites/poker-planner/commit/2e2f58f81f1b0e6f4e9d9c687a7d2e776c036302))
+* use navbar for game context ([a7ef557](https://github.com/ved-websites/poker-planner/commit/a7ef5576655cdf0e214b8b248c1ec9ee17d02d86))
+
+
+### Bug Fixes
+
+* make version link open in a new tab ([e6cafb8](https://github.com/ved-websites/poker-planner/commit/e6cafb866ffc62fcf74a446de8dc11cbe3451cb5))
+
+
+### Tweaks
+
+* better game layout for vertical spacing constraints ([93ae2c0](https://github.com/ved-websites/poker-planner/commit/93ae2c0b3f4a37c34a96fe9815f643a2bd51deeb))
+
 ## [0.3.0](https://github.com/ved-websites/poker-planner/compare/poker-planner-v0.2.0...poker-planner-v0.3.0) (2025-10-08)
 
 
