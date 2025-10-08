@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1](https://github.com/ved-websites/poker-planner/compare/poker-planner-v0.4.0...poker-planner-v0.4.1) (2025-10-08)
+
+
+### Bug Fixes
+
+* add proper error page and better french new round button ([9e0386d](https://github.com/ved-websites/poker-planner/commit/9e0386d669eead151be725c3735e740912cda25f))
+
 ## [0.4.0](https://github.com/ved-websites/poker-planner/compare/poker-planner-v0.3.0...poker-planner-v0.4.0) (2025-10-08)
 
 
