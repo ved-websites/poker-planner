@@ -45,6 +45,7 @@
 		<a
 			href="https://github.com/ved-websites/poker-planner/releases"
 			class="link"
+			target="_blank"
 		>
 			v{version}
 		</a>
