@@ -13,6 +13,7 @@ export interface GameData {
 	players: Player[];
 	createdAt: number;
 	isCurrentlyRevealed: boolean;
+	hostPlayerId: string | undefined;
 }
 
 export interface GameState {

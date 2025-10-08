@@ -5,16 +5,14 @@
 
 	type Props = {
 		players: Player[];
-		// onRevealCards: () => unknown;
-		// onStartNewRound: () => unknown;
 		isCardsRevealed: boolean;
+		activateGameButtons: boolean;
 	};
 
 	let {
 		players,
-		// onRevealCards,
-		// onStartNewRound,
 		isCardsRevealed = $bindable(false),
+		activateGameButtons = true,
 	}: Props = $props();
 
 	// const initialPlayers = players;
@@ -65,9 +63,37 @@
 </script>
 
 <div class="circle-table bg-gray-400">
-	{#if !isCardsRevealed}
+	{#if activateGameButtons}
+		{#if !isCardsRevealed}
+			<form action="?/reveal" method="POST" use:enhance>
+				<Button type="submit" disabled={!atLeastOnePlayerVoted}>
+					Reveal cards
+				</Button>
+			</form>
+		{:else}
+			<form action="?/newround" method="POST" use:enhance>
+				<Button type="submit">Start new round</Button>
+			</form>
+		{/if}
+	{:else}
+		<div class="flex items-center justify-center w-3/4">
+			{#if !isCardsRevealed}
+				<span class="text-center italic">
+					Waiting for the host to reveal the cards...
+				</span>
+			{:else}
+				<span class="text-center italic">
+					Cards revealed! Waiting for the host to start a new round...
+				</span>
+			{/if}
+		</div>
+	{/if}
+	<!-- {#if !isCardsRevealed}
 		<form action="?/reveal" method="POST" use:enhance>
-			<Button type="submit" disabled={!atLeastOnePlayerVoted}>
+			<Button
+				type="submit"
+				disabled={!activateGameButtons || !atLeastOnePlayerVoted}
+			>
 				Reveal cards
 			</Button>
 		</form>
@@ -75,7 +101,7 @@
 		<form action="?/newround" method="POST" use:enhance>
 			<Button type="submit">Start new round</Button>
 		</form>
-	{/if}
+	{/if} -->
 	{#each players as player, i}
 		<span
 			class="player"

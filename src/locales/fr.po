@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-07T21:03:31.761Z\n"
-"PO-Revision-Date: 2025-10-08T02:56:51.259Z\n"
+"PO-Revision-Date: 2025-10-08T03:26:28.652Z\n"
 "Last-Translator: \n"
 "Language: fr\n"
 "Language-Team: \n"
@@ -122,3 +122,18 @@ msgstr "On dirait que personne n'a voté de nombre..."
 #. placeholder {0}: version
 msgid "v{0}"
 msgstr "v{0}"
+
+#: src/routes/new-game/+page.svelte
+msgid "Only allow host to progress the game"
+msgstr "Autoriser uniquement l'hôte à faire progresser le jeu"
+
+#: src/routes/game/[gameId]/components/GameTable.svelte
+msgid "Waiting for the host to reveal the cards..."
+msgstr "En attente que l'hôte révèle les cartes..."
+
+#: src/routes/game/[gameId]/components/GameTable.svelte
+msgid "Cards revealed! Waiting for the host to start a new round..."
+msgstr "Cartes révélées! En attendant que l'hôte commence un nouveau tour ..."
+
+#~ msgid "Only the host can progress the game"
+#~ msgstr ""

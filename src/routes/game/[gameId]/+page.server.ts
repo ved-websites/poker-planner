@@ -22,6 +22,7 @@ export const load = (async ({ params, cookies }) => {
 	return {
 		game: game.data,
 		existingUser,
+		userId,
 	};
 }) satisfies PageServerLoad;
 

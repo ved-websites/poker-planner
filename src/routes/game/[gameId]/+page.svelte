@@ -171,6 +171,10 @@
 	if (data.existingUser) {
 		connectToGameEvents(data.existingUser.name);
 	}
+
+	let accessToGameButtons = $derived(
+		!game.hostPlayerId || data.userId === game.hostPlayerId
+	);
 </script>
 
 {#if !data.existingUser && gameState !== "joined"}
@@ -193,6 +197,7 @@
 	<GameTable
 		players={game.players}
 		isCardsRevealed={game.isCurrentlyRevealed}
+		activateGameButtons={accessToGameButtons}
 	/>
 </div>
 

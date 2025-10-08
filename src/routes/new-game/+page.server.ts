@@ -41,6 +41,7 @@ export const actions = {
 			votingSystem: form.data.votingSystem.split(","),
 			createdAt: Date.now(),
 			isCurrentlyRevealed: false,
+			hostPlayerId: form.data.onlyHostCanProgress ? userId : undefined,
 		} satisfies GameData;
 
 		games.set(randomId, {
