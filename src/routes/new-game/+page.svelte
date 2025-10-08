@@ -5,6 +5,7 @@
 	import { zod4Client } from "sveltekit-superforms/adapters";
 	import { superForm } from "sveltekit-superforms/client";
 	import { newGameSchema } from "./schema";
+	import { useUserName } from "../game/data";
 
 	let { data } = $props();
 
@@ -13,6 +14,12 @@
 	});
 
 	const { form: formData, enhance } = form;
+	
+	const storedUserName = useUserName();
+	
+	$effect(() => {
+		$formData.hostName = storedUserName.current;
+	})
 </script>
 
 <div class="mx-auto min-w-80">
@@ -23,7 +30,7 @@
 					<Form.Label>Your name</Form.Label>
 					<Input
 						{...props}
-						bind:value={$formData.hostName}
+						bind:value={storedUserName.current}
 						autocomplete="off"
 					/>
 				{/snippet}

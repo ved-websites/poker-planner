@@ -4,6 +4,7 @@
 	import { Input } from "$lib/components/ui/input";
 	import { Label } from "$lib/components/ui/label";
 	import { PersistedState } from "runed";
+	import { useUserName } from "../../data";
 
 	interface Props {
 		isLoading?: boolean;
@@ -13,7 +14,7 @@
 
 	let { isLoading = $bindable(false), onSubmit, onCancel }: Props = $props();
 
-	let name = new PersistedState<string>("player-name", "");
+	let name = useUserName();
 </script>
 
 <AlertDialog.Root open>
