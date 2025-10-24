@@ -61,7 +61,7 @@
 				</button>
 
 				<span
-					class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white text-sm font-bold mt-2"
+					class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-500 text-white text-sm font-bold"
 				>
 					{card.count}
 				</span>

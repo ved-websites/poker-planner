@@ -46,7 +46,14 @@
 	);
 </script>
 
-<div class="min-h-100 flex items-center justify-center">
+<div
+	class="flex items-center justify-center"
+	style="
+		--table-margin: calc({playerPathMargin}px + {playerSize}px);
+		margin-top: var(--table-margin);
+		margin-bottom: var(--table-margin);
+	"
+>
 	<div
 		class="game-table bg-gray-400 flex items-center justify-center"
 		style="
