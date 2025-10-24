@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.2](https://github.com/ved-websites/poker-planner/compare/poker-planner-v0.4.1...poker-planner-v0.4.2) (2025-10-24)
+
+
+### Bug Fixes
+
+* better table design ([fca4fa0](https://github.com/ved-websites/poker-planner/commit/fca4fa03b7e35786f22c7d5fe2e3d08d3dbbb24d))
+
 ## [0.4.1](https://github.com/ved-websites/poker-planner/compare/poker-planner-v0.4.0...poker-planner-v0.4.1) (2025-10-08)
 
 
