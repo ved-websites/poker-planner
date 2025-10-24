@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-07T21:03:31.761Z\n"
-"PO-Revision-Date: 2025-10-08T06:17:33.711Z\n"
+"PO-Revision-Date: 2025-10-24T23:09:56.252Z\n"
 "Last-Translator: \n"
 "Language: fr\n"
 "Language-Team: \n"
@@ -37,8 +37,8 @@ msgstr "À propos"
 msgid "Copy game url (invite link) :"
 msgstr "Copier l'URL du jeu (lien d'invitation) :"
 
-#: src/routes/game/[gameId]/components/ChoiceResults.svelte
 #. placeholder {0}: formattedVoteAverage
+#: src/routes/game/[gameId]/components/ChoiceResults.svelte
 msgid "Average : {0}"
 msgstr "Moyenne : {0}"
 
@@ -46,9 +46,7 @@ msgstr "Moyenne : {0}"
 msgid ""
 "This website was created to fulfill the need for a free planning poker tool\n"
 "in an online ecosystem where most options are paid."
-msgstr ""
-"Ce site web a été créé pour répondre au besoin d'un outil de planning poker "
-"gratuit dans un écosystème en ligne où la plupart des options sont payantes."
+msgstr "Ce site web a été créé pour répondre au besoin d'un outil de planning poker gratuit dans un écosystème en ligne où la plupart des options sont payantes."
 
 #: src/routes/about/+page.svelte
 msgid "made with ❤️ by <0>V-ed</0>"
@@ -80,10 +78,12 @@ msgid "Invite link copied!"
 msgstr "Lien d'invitation copié!"
 
 #: src/routes/game/[gameId]/components/GameTable.svelte
+#: src/routes/game/[gameId]/components/GameTable/GameTable.svelte
 msgid "Reveal cards"
 msgstr "Révéler les cartes"
 
 #: src/routes/game/[gameId]/components/GameTable.svelte
+#: src/routes/game/[gameId]/components/GameTable/GameTable.svelte
 msgid "Start new round"
 msgstr "Nouvelle manche"
 
@@ -111,8 +111,8 @@ msgstr "Continuer"
 msgid "Seems like nobody voted a number..."
 msgstr "On dirait que personne n'a voté de nombre..."
 
-#: src/lib/components/Navbar.svelte
 #. placeholder {0}: version
+#: src/lib/components/Navbar.svelte
 msgid "v{0}"
 msgstr "v{0}"
 
@@ -121,12 +121,12 @@ msgid "Only allow host to progress the game"
 msgstr "Autoriser uniquement l'hôte à faire progresser le jeu"
 
 #: src/routes/game/[gameId]/components/GameTable.svelte
+#: src/routes/game/[gameId]/components/GameTable/GameTable.svelte
 msgid "Waiting for the host to reveal the cards..."
 msgstr "En attente que l'hôte révèle les cartes..."
 
-#: src/routes/game/[gameId]/components/GameTable.svelte
-msgid "Cards revealed! Waiting for the host to start a new round..."
-msgstr "Cartes révélées! En attendant que l'hôte commence un nouveau tour ..."
+#~ msgid "Cards revealed! Waiting for the host to start a new round..."
+#~ msgstr "Cartes révélées! En attendant que l'hôte commence un nouveau tour ..."
 
 #: src/lib/components/Navbar.svelte
 msgid "Game ID: <0/>"
@@ -151,3 +151,19 @@ msgstr "Retourner à l'écran d'accueil"
 
 #~ msgid "{0} - Error"
 #~ msgstr ""
+
+#: src/routes/game/[gameId]/components/GameTable.svelte
+#: src/routes/game/[gameId]/components/GameTable/GameTable.svelte
+msgid ""
+"Cards revealed! Waiting for the host to start a new\n"
+"round..."
+msgstr ""
+
+#. placeholder {0}: i
+#: src/routes/game/[gameId]/components/GameTable/fake-players.svelte.ts
+msgid "Name {0}"
+msgstr ""
+
+#: src/routes/game/[gameId]/components/GameTable/fake-players.svelte.ts
+msgid "Hello!"
+msgstr ""

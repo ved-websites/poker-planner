@@ -8,7 +8,7 @@
 	import { source, type Source } from "sveltekit-sse";
 	import ChoiceResults from "./components/ChoiceResults.svelte";
 	import ChoiceSelector from "./components/ChoiceSelector.svelte";
-	import GameTable from "./components/GameTable.svelte";
+	import GameTable from "./components/GameTable/GameTable.svelte";
 	import PlayerNameDialog from "./components/PlayerNameDialog.svelte";
 
 	let { data } = $props();

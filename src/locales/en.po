@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-10-07T21:03:31.759Z\n"
-"PO-Revision-Date: 2025-10-08T06:17:33.708Z\n"
+"PO-Revision-Date: 2025-10-24T23:10:15.537Z\n"
 "Last-Translator: \n"
 "Language: en\n"
 "Language-Team: \n"
@@ -37,8 +37,8 @@ msgstr "About"
 msgid "Copy game url (invite link) :"
 msgstr "Copy game url (invite link) :"
 
-#: src/routes/game/[gameId]/components/ChoiceResults.svelte
 #. placeholder {0}: formattedVoteAverage
+#: src/routes/game/[gameId]/components/ChoiceResults.svelte
 msgid "Average : {0}"
 msgstr "Average : {0}"
 
@@ -80,10 +80,12 @@ msgid "Invite link copied!"
 msgstr "Invite link copied!"
 
 #: src/routes/game/[gameId]/components/GameTable.svelte
+#: src/routes/game/[gameId]/components/GameTable/GameTable.svelte
 msgid "Reveal cards"
 msgstr "Reveal cards"
 
 #: src/routes/game/[gameId]/components/GameTable.svelte
+#: src/routes/game/[gameId]/components/GameTable/GameTable.svelte
 msgid "Start new round"
 msgstr "Start new round"
 
@@ -111,8 +113,8 @@ msgstr "Continue"
 msgid "Seems like nobody voted a number..."
 msgstr "Seems like nobody voted a number..."
 
-#: src/lib/components/Navbar.svelte
 #. placeholder {0}: version
+#: src/lib/components/Navbar.svelte
 msgid "v{0}"
 msgstr "v{0}"
 
@@ -121,12 +123,12 @@ msgid "Only allow host to progress the game"
 msgstr "Only allow host to progress the game"
 
 #: src/routes/game/[gameId]/components/GameTable.svelte
+#: src/routes/game/[gameId]/components/GameTable/GameTable.svelte
 msgid "Waiting for the host to reveal the cards..."
 msgstr "Waiting for the host to reveal the cards..."
 
-#: src/routes/game/[gameId]/components/GameTable.svelte
-msgid "Cards revealed! Waiting for the host to start a new round..."
-msgstr "Cards revealed! Waiting for the host to start a new round..."
+#~ msgid "Cards revealed! Waiting for the host to start a new round..."
+#~ msgstr "Cards revealed! Waiting for the host to start a new round..."
 
 #: src/lib/components/Navbar.svelte
 msgid "Game ID: <0/>"
@@ -151,3 +153,20 @@ msgstr "Go back to home screen"
 
 #~ msgid "{0} - Error"
 #~ msgstr "{0} - Error"
+
+#: src/routes/game/[gameId]/components/GameTable.svelte
+#: src/routes/game/[gameId]/components/GameTable/GameTable.svelte
+msgid ""
+"Cards revealed! Waiting for the host to start a new\n"
+"round..."
+msgstr ""
+"Cards revealed! Waiting for the host to start a new\n"
+"round..."
+
+#. placeholder {0}: i
+#: src/routes/game/[gameId]/components/GameTable/fake-players.svelte.ts
+msgid "Name {0}"
+msgstr "Name {0}"
+
+#~ msgid "Hello!"
+#~ msgstr "Hello!"
