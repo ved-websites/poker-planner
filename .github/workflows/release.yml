@@ -18,7 +18,7 @@ jobs:
           config-file: .github/release-please-config.json
           manifest-file: .github/release-please-manifest.json
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         if: fromJSON(steps.release-please.outputs.releases_created)
         with:
           fetch-depth: 0
