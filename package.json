@@ -54,6 +54,6 @@
 		"@wuchale/vite-plugin": "^0.14.7",
 		"mode-watcher": "^1.1.0",
 		"runed": "^0.34.0",
-		"wuchale": "^0.17.2"
+		"wuchale": "^0.26.0"
 	}
 }
