@@ -50,7 +50,7 @@
 		]
 	},
 	"dependencies": {
-		"@wuchale/svelte": "^0.16.3",
+		"@wuchale/svelte": "^0.21.0",
 		"@wuchale/vite-plugin": "^0.14.7",
 		"mode-watcher": "^1.1.0",
 		"runed": "^0.34.0",
